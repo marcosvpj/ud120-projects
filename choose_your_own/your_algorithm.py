@@ -49,7 +49,13 @@ score = clf.score(features_test, labels_test)
 print('score using Random Forest:', score)
 
 
+from sklearn.ensemble import AdaBoostClassifier
+clf = AdaBoostClassifier(n_estimators=100)
+clf.fit(features_train, labels_train)
+clf.predict(features_test)
+score = clf.score(features_test, labels_test)
 
+print('score using AdaBoost:', score)
 
 try:
     prettyPicture(clf, features_test, labels_test)
