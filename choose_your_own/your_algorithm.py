@@ -40,6 +40,13 @@ score = clf.score(features_test, labels_test)
 print('score using K Nearest Neighbors:', score)
 
 
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(n_estimators=60)
+clf.fit(features_train, labels_train)
+clf.predict(features_test)
+score = clf.score(features_test, labels_test)
+
+print('score using Random Forest:', score)
 
 
 
