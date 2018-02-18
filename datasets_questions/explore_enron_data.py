@@ -19,4 +19,18 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print('Dataset size:')
+print(len(enron_data))
 
+print('Number of features:')
+print(len(enron_data.itervalues().next()))
+
+
+def get_poi(i): return enron_data[i]['poi']
+
+
+poi = map(get_poi, enron_data)
+
+total_poi = sum(poi)
+print('Number of  POI:')
+print(total_poi)
