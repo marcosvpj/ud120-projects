@@ -25,3 +25,8 @@ matplotlib.pyplot.xlabel('salary')
 matplotlib.pyplot.show()
 
 
+for point in data_dict:
+    if (data_dict[point]['salary'] == 'NaN' or data_dict[point]['bonus'] == 'NaN'):
+        continue
+    if (data_dict[point]['salary'] >= 1000000 and data_dict[point]['bonus'] >= 5000000):
+        print (point, data_dict[point]['salary'], data_dict[point]['bonus'])
