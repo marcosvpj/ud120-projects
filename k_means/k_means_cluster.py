@@ -70,7 +70,11 @@ from sklearn.cluster import KMeans
 reg = KMeans(n_clusters=2)
 pred = reg.fit_predict(finance_features)
 
-
+exercised_stock_options = []
+for line in finance_features:
+    exercised_stock_options.append(line[1])
+print "Min: {}".format(min(x for x in exercised_stock_options if x > 0))
+print "Max: {}".format(max(exercised_stock_options))
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
